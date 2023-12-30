@@ -22,6 +22,7 @@ const Home = ({ crud }) => {
           </li>
         ))}
       </ul>
+      <Link href={`/post`}>投稿へ</Link>
     </div>
   );
 };
