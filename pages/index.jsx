@@ -13,6 +13,7 @@ export const getStaticProps = async () => {
 const Home = ({ crud }) => {
   return (
     <div>
+      <h3>topページ</h3>
       <ul>
         {crud.map((crud) => (
           <li key={crud.id}>
