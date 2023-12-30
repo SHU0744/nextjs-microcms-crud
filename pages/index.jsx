@@ -1,7 +1,7 @@
 import { client } from "@/libs/client";
 import Link from "next/link";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await client.get({ endpoint: "crud" });
   return {
     props: {
