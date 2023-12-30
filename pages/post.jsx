@@ -5,7 +5,7 @@ export default function Post() {
   return (
     <>
       <div>
-        <h1>投稿ページ</h1>
+        <h1>投稿ページ!</h1>
         <div>
           <Link href={`/`}>TOPへ</Link>
         </div>
