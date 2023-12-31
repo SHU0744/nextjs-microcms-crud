@@ -10,6 +10,23 @@ const UpdatePost = ({ crud }) => {
   const editingHandler = () => {
     setIsEditing(true);
   };
+
+  const deleteItem = async () => {
+    await client
+      .delete({
+        endpoint: "crud",
+        contentId: crud.id,
+      })
+      .then((res) => {
+        alert("削除しました");
+        router.push("/");
+      })
+      .catch((error) => {
+        alert("削除できませんでした");
+        router.reload;
+      });
+  };
+
   const update = async (e) => {
     e.preventDefault();
     client
@@ -86,6 +103,12 @@ const UpdatePost = ({ crud }) => {
           <button type="submit">更新する</button>
         </div>
       </form>
+      <div>
+        <p></p>
+      </div>
+      <div onClick={deleteItem}>
+        <button>削除する</button>
+      </div>
     </>
   );
 };
