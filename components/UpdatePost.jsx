@@ -56,7 +56,10 @@ const UpdatePost = ({ crud }) => {
   return (
     <>
       <div>
-        <button onClick={() => [editingHandler(), setSelectedContent(crud)]}>
+        <button
+          onClick={() => [editingHandler(), setSelectedContent(crud)]}
+          className="bg-blue-500 p-2 text-white"
+        >
           <p>編集する</p>
         </button>
       </div>
@@ -75,39 +78,46 @@ const UpdatePost = ({ crud }) => {
                   title: e.target.value,
                 })
               }
+              className="bg-slate-100 p-1"
             />
           </div>
         )}
       </div>
-      <div>
+      <div className="mt-2">
         <h2>コンテンツ</h2>
         {!isEditing && <p>{crud.content}</p>}
         {isEditing && (
           <div>
-            <input
+            <textarea
               value={selectedContent.content}
-              type="text"
-              placeholder=" "
+              cols="30"
+              rows="10"
               onChange={(e) =>
                 setSelectedContent({
                   ...selectedContent,
                   content: e.target.value,
                 })
               }
-            />
+              className="bg-slate-100"
+            ></textarea>
           </div>
         )}
       </div>
-      <form onSubmit={update}>
-        <div>
-          <button type="submit">更新する</button>
-        </div>
-      </form>
+      {isEditing && (
+        <form onSubmit={update}>
+          <div>
+            <button type="submit" className="bg-blue-500 p-2 text-white">
+              更新する
+            </button>
+          </div>
+        </form>
+      )}
+
       <div>
         <p></p>
       </div>
-      <div onClick={deleteItem}>
-        <button>削除する</button>
+      <div onClick={deleteItem} className="mt-1">
+        <button className="bg-black p-2 text-white">削除する</button>
       </div>
     </>
   );

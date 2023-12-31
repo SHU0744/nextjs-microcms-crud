@@ -21,12 +21,14 @@ export const getStaticProps = async (context) => {
 export default function CrudId({ crud }) {
   return (
     <main>
-      <h2>【投稿の詳細ページです】</h2>
+      <h2 className="text-2xl">【投稿の詳細ページです】</h2>
       <div>
         <UpdatePost crud={crud} />
       </div>
       <div>
-        <Link href="http://localhost:3000/">TOPに戻る</Link>
+        <Link href="http://localhost:3000/" className="underline">
+          TOPに戻る
+        </Link>
       </div>
     </main>
   );

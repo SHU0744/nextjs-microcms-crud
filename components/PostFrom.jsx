@@ -29,16 +29,17 @@ export const PostFrom = () => {
   return (
     <>
       <div>
-        <h2>タイトル</h2>
+        <h2 className="text-l">タイトル</h2>
         <input
           type="text"
           onChange={(e) =>
             setSelectedContent({ ...selectedContent, title: e.target.value })
           }
+          className="bg-slate-100"
         />
       </div>
-      <div>
-        <h2>コンテンツ</h2>
+      <div className="mt-2">
+        <h2 className="text-l">コンテンツ</h2>
         <textarea
           name=""
           id=""
@@ -47,12 +48,13 @@ export const PostFrom = () => {
           onChange={(e) =>
             setSelectedContent({ ...selectedContent, content: e.target.value })
           }
+          className="bg-slate-100"
         ></textarea>
       </div>
-      <div>
+      <div className="mt-1">
         <form onSubmit={create}>
-          <button type="submit">
-            <p>登録する</p>
+          <button type="submit" className="bg-blue-500 p-2 text-white">
+            登録する
           </button>
         </form>
       </div>
